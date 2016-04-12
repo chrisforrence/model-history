@@ -1,0 +1,16 @@
+{
+    "name": "cforrence/model-history",
+    "description": "Provides an easy way to track changes to Laravel models",
+    "keywords": ["model", "history", "audit", "log"],
+    "license": "MIT",
+    "authors": [{"name": "Chris Forrence", "email": "chrisforrence@gmail.com"}],
+    "require": {
+        "php": ">=5.4.0",
+        "laravel/framework": "5.x"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chrisforrence\\ModelHistory\\": "src"
+        }
+    }
+}
