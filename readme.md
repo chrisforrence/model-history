@@ -40,7 +40,7 @@ In your model, just add `use Cforrence\Traits\MaintainHistory;` within your clas
 
     public class Post extends Eloquent {
 
-        use Cforrence\Traits\MaintainHistory;
+        use \Cforrence\Traits\MaintainHistory;
 
         ...
     }
