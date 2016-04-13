@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreateModelHistoryTable extends Migration
 {
     /**
-     * Run the migrations.
+     * This creates the model history
      *
      * @return void
      */
