@@ -10,6 +10,7 @@ class ModelHistoryServiceProvider extends ServiceProvider
      * @var bool
      */
     protected $defer = true;
+
     /**
      * Bootstrap the application events.
      *

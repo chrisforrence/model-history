@@ -70,7 +70,7 @@ class ModelHistory extends Eloquent
         }
     }
 
-    public function parent()
+    public function context()
     {
         return $this->morphTo();
     }

@@ -65,6 +65,6 @@ trait MaintainHistory
 
     public function history()
     {
-        return $this->morphMany('Cforrence\ModelHistory', 'parent');
+        return $this->morphMany('Cforrence\ModelHistory', 'context');
     }
 }
