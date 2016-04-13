@@ -24,6 +24,10 @@ class ModelHistoryServiceProvider extends ServiceProvider
             $publishPath = base_path('config/model-history.php');
         }
         $this->publishes([$configPath => $publishPath], 'config');
+
+        $this->publishes([
+            __DIR__.'/../database/migrations/' => database_path('migrations')
+        ], 'migrations');
     }
     /**
      * Register the service provider.
