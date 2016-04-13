@@ -41,7 +41,7 @@ trait MaintainHistory
          */
         self::created(function ($model) {
 
-            $model->history->create([
+            $model->history()->create([
                 'link' => Route::has(str_plural(strtolower(class_basename($model))).'.show') ? route(str_plural(strtolower(class_basename($model))).'.show',
                     [$model->id]) : null,
                 'message' => 'Created new '.strtolower(class_basename($model)).' "'.self::getObjectLabel($model).'"',
@@ -62,7 +62,7 @@ trait MaintainHistory
                 $changed[] = ['key' => $key, 'old' => $model->getOriginal($key), 'new' => $model->$key];
             }
 
-            $model->history->create([
+            $model->history()->create([
                 'message' => 'Updating '.strtolower(class_basename($model)).' "'.self::getObjectLabel($model).'"',
                 'link' => Route::has(str_plural(strtolower(class_basename($model))).'.show') ? route(str_plural(strtolower(class_basename($model))).'.show',
                     [$model->id]) : null,
@@ -74,7 +74,7 @@ trait MaintainHistory
          * Adds a ModelHistory entry to the model prior to deleting it
          */
         self::deleting(function ($model) {
-            $model->history->create([
+            $model->history()->create([
                 'message' => 'Deleting '.strtolower(class_basename($model)).' "'.self::getObjectLabel($model).'"',
             ]);
         });
