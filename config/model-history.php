@@ -2,7 +2,7 @@
 
 return [
 
-    /**
+    /*
      * Potential name attributes to be used for display purposes
      */
     'potential_name_attributes' => ['title', 'name', 'label', 'id'],

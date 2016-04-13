@@ -7,7 +7,6 @@ use Eloquent;
 
 class ModelHistory extends Eloquent
 {
-
     public $timestamps = false;
     protected $table = 'model_history';
     protected $dates = ['executed_at'];
@@ -17,7 +16,7 @@ class ModelHistory extends Eloquent
         'message',
         'executed_at',
         'additional_information',
-        'link'
+        'link',
     ];
 
     protected $casts = [
@@ -27,11 +26,11 @@ class ModelHistory extends Eloquent
     /**
      * Adds functionality to ModelHistory.
      */
-    static function boot()
+    public static function boot()
     {
         parent::boot();
 
-        /**
+        /*
          * When saving a ModelHistory entry, set the user_id and executed_at fields automatically.
          */
         self::saving(function ($a) {
@@ -41,7 +40,7 @@ class ModelHistory extends Eloquent
     }
 
     /**
-     * Returns the user relationship
+     * Returns the user relationship.
      *
      * @return mixed
      */
@@ -51,7 +50,8 @@ class ModelHistory extends Eloquent
     }
 
     /**
-     * Returns whether or not a context type/id are present
+     * Returns whether or not a context type/id are present.
+     *
      * @return bool
      */
     public function contextAvailable()
@@ -60,7 +60,8 @@ class ModelHistory extends Eloquent
     }
 
     /**
-     * Returns a display string
+     * Returns a display string.
+     *
      * @return string
      */
     public function getDisplayContextAttribute()
@@ -73,16 +74,15 @@ class ModelHistory extends Eloquent
         }
 
         return "<a href=\"{$this->link}\">{$this->context_type} #{$this->context_id}";
-
     }
 
     /**
-     * Provides context for the history model
+     * Provides context for the history model.
+     *
      * @return mixed
      */
     public function context()
     {
         return $this->morphTo();
     }
-
 }

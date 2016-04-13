@@ -6,9 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreateModelHistoryTable extends Migration
 {
     /**
-     * This creates the model history
-     *
-     * @return void
+     * This creates the model history table in the database.
      */
     public function up()
     {
@@ -26,8 +24,6 @@ class CreateModelHistoryTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {
