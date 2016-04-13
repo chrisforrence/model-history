@@ -3,7 +3,6 @@
 namespace Cforrence;
 
 use Auth;
-use Carbon\Carbon;
 use Eloquent;
 
 class ModelHistory extends Eloquent
@@ -13,8 +12,6 @@ class ModelHistory extends Eloquent
     protected $table = 'model_history';
     protected $dates = ['executed_at'];
     protected $fillable = [
-        'context_type',
-        'context_id',
         'user_id',
         'message',
         'executed_at',
@@ -33,7 +30,7 @@ class ModelHistory extends Eloquent
 
         self::saving(function ($a) {
             $a->user_id = Auth::check() ? Auth::id() : null;
-            $a->executed_at = Carbon::now();
+            $a->executed_at = time();
         });
     }
 

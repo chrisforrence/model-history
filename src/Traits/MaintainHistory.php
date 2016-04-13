@@ -1,8 +1,8 @@
-<?php namespace Cforrence\Traits;
+<?php
+
+namespace Cforrence\Traits;
 
 use Route;
-use Auth;
-use Cforrence\ModelHistory;
 
 /**
  * This trait is intended to maintain a log of changes to models that implement this trait.
